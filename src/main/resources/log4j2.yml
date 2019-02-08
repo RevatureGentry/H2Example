@@ -1,0 +1,18 @@
+Configuration:
+  Appenders:
+    Console:
+      PatternLayout:
+        pattern: '[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n'
+      name: Console
+      target: SYSTEM_OUT
+    File:
+      PatternLayout:
+        pattern: '[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n'
+      name: File
+      fileName: /home/william/appLogs/h2-demo/logfile.log.%d{yyyy-MM-dd-hh-mm}
+  Loggers:
+    Root:
+      AppenderRef:
+      - ref: Console
+      - ref: File
+      level: trace
